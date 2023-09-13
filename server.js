@@ -6,7 +6,7 @@ const { usuarioEntrarSala, getUsuariosSala, mensagemFormatada, getUsuario, usuar
 
 const app = express();
 const server = http.createServer(app);
-const PORT = 4000;
+const PORT = process.env.PORT;
 const io = socketIO(server);
 
 
