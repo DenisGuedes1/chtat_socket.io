@@ -2,4 +2,4 @@
 # exit on error
 set -o errexit
 npm install
-npm run dev
+npm start
