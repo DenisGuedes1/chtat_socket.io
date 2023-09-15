@@ -6,13 +6,13 @@ const { usuarioEntrarSala, getUsuariosSala, mensagemFormatada, getUsuario, usuar
 
 const app = express();
 const server = http.createServer(app);
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000
 const io = socketIO(server);
 
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const nomeSala = "Amigos do Warzone"
+const nomeSala = "Player's Lounge"
 
 /*Socket.IO*/
 io.on("connection", socket => {
