@@ -2,11 +2,16 @@ const setLocalStorage = (usuario) => localStorage.setItem("usuario", JSON.string
 
 const btnEntrar = () =>{
     let inputName = document.getElementById('nome').value
-    let idUser = (Math.random() * 1000).toString();
+     if (inputName.trim() !== "") {
+        let idUser = (Math.random() * 1000).toString();
 
-    setLocalStorage({
-        nome: inputName,
-        myId: idUser
-    });
-    window.location.href="chat.html?usuarionome=" + inputName + "&meuid=" + idUser
+        setLocalStorage({
+            nome: inputName,
+            myId: idUser
+        });
+
+        window.location.href = "chat.html?usuarionome=" + inputName + "&meuid=" + idUser;
+    } else {
+        alert("Por favor, forneça um nome antes de entrar no chat.");
+    }
 }
